@@ -1,5 +1,18 @@
 const { fontFamily } = require("tailwindcss/defaultTheme")
 
+function generateShades(h, s, l, stepsize = 9) {
+  const shades = {}
+  shades["DEFAULT"] = `hsl(${h}, ${s}%, ${l}%)`
+  for (let i = 1; i <= 9; i++) {
+    const adjustedLightness = l + (5 - i) * stepsize // Adjust the lightness around the middle value (500)
+    shades[i * 100] = `hsla(${h}, ${s}%, ${Math.min(
+      Math.max(adjustedLightness, 0),
+      100
+    )}%)`
+  }
+  return shades
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -47,6 +60,12 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "polkadot-pink": "polkadot-primary",
+        "polkadot-primary": generateShades(328, 100, 45),
+        "polkadot-secondary": generateShades(257, 63, 46),
+        "polkadot-tertiary": generateShades(198, 100, 50),
+        "polkadot-quaternary": generateShades(146, 87, 65, 8),
+        "polkadot-quinary": generateShades(73, 100, 60),
       },
       borderRadius: {
         lg: `var(--radius)`,

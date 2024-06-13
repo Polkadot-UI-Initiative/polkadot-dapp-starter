@@ -1,18 +1,24 @@
+import { title } from "process"
+
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Next.js",
+  name: "Polkadot dApp Starter",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "Kickstart your next polkadot multichain dApp with this starter template.",
   mainNav: [
     {
       title: "Home",
       href: "/",
     },
+    {
+      title: "Colors",
+      href: "/colors",
+    },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
+    twitter: "https://x.com/PolkaDx",
+    github: "https://github.com/Polkadot-UI-Initiative/polkadot-dapp-starter",
     docs: "https://ui.shadcn.com",
   },
 }
