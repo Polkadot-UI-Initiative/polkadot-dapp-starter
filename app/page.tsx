@@ -8,13 +8,24 @@ export default function IndexPage() {
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-2">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-          Beautifully designed components <br className="hidden sm:inline" />
-          built with Radix UI and Tailwind CSS.
+          Reducing the complexity of <br className="hidden sm:inline" />
+          building Polkadot dApps
         </h1>
-        <p className="max-w-[700px] text-lg text-polkadot-primary-800">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
+        <p className="max-w-[700px] text-lg">
+          Polkadot dApp starter is a modern, opinionated starter kit for
+          building Polkadot dApps. It includes all the tools you need to start
+          building your dApp, including a modern frontend framework, and a UI
+          component library.
         </p>
+        <ul className="list-disc ml-4">
+          <li className="list-item">next.js 14</li>
+          <li className="list-item">useInkathon</li>
+          <li className="list-item">shadcn</li>
+          <li className="list-item">Tailwind CSS</li>
+          <li className="list-item">TypeScript</li>
+          <li className="list-item">Prettier</li>
+          <li className="list-item">@polkadot/react-identicon</li>
+        </ul>
       </div>
       <div className="flex gap-4">
         <Link

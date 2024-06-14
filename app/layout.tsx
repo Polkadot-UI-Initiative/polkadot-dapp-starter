@@ -1,12 +1,17 @@
 import "@/styles/globals.css"
 import { Metadata } from "next"
+import { UseInkathonProvider } from "@scio-labs/use-inkathon"
 
+import { polkadotRelay } from "@/config/chains"
 import { siteConfig } from "@/config/site"
+import { supportedWallets } from "@/config/supportedWallets"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
+
+import Providers from "./providers"
 
 export const metadata: Metadata = {
   title: {
@@ -40,13 +45,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Providers>
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
               <div className="flex-1">{children}</div>
             </div>
-            <TailwindIndicator />
-          </ThemeProvider>
+          </Providers>
+          <TailwindIndicator />
         </body>
       </html>
     </>
