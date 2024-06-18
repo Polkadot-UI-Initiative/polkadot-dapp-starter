@@ -1,7 +1,10 @@
 import Link from "next/link"
+import { useChains } from "@/providers/chains-provider"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
+import UserBalanceCard from "@/components/cards/user-balance-card"
+import ChainSwitch from "@/components/chain-switch"
 
 export default function IndexPage() {
   return (
@@ -17,7 +20,7 @@ export default function IndexPage() {
           building your dApp, including a modern frontend framework, and a UI
           component library.
         </p>
-        <ul className="list-disc ml-4">
+        <ul className="ml-4 list-disc">
           <li className="list-item">next.js 14</li>
           <li className="list-item">useInkathon</li>
           <li className="list-item">shadcn</li>
@@ -26,6 +29,7 @@ export default function IndexPage() {
           <li className="list-item">Prettier</li>
           <li className="list-item">@polkadot/react-identicon</li>
         </ul>
+        <UserBalanceCard />
       </div>
       <div className="flex gap-4">
         <Link

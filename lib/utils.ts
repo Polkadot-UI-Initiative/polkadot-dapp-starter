@@ -1,4 +1,4 @@
-import { BN } from "@polkadot/util"
+import { BN, formatBalance } from "@polkadot/util"
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
@@ -16,27 +16,19 @@ export const trimAddress = (
   return `${address.slice(0, amount)}...${address.slice(-amount)}`
 }
 
-export function parseBN(bnValue: BN | string, decimals: number): number {
-  // Convert the BN value to a string
-  const bnStr = bnValue.toString()
-
-  // Determine where to place the decimal point
-  let decimalPointIndex = bnStr.length - decimals
-
-  // Initialize formatted value
-  let formattedValue
-
-  // Handle cases where the BN value is smaller than the expected decimal places
-  if (decimalPointIndex <= 0) {
-    formattedValue = "0." + "0".repeat(Math.abs(decimalPointIndex)) + bnStr
-  } else {
-    // Insert the decimal point
-    formattedValue =
-      bnStr.substring(0, decimalPointIndex) +
-      "." +
-      bnStr.substring(decimalPointIndex)
-  }
-
-  // Return the result, parsed as a float and fixed to 2 decimal places
-  return parseFloat(formattedValue)
+export const humananReadableBalance = (
+  balance: BN | string | undefined,
+  decimals: number | undefined = 12,
+  withUnit: string | boolean | undefined = true
+): string => {
+  return formatBalance(balance, {
+    decimals,
+    forceUnit: "-",
+    withSi: true,
+    withAll: false,
+    withUnit,
+  })
 }
+
+export const unknownChainLogo =
+  "https://raw.githubusercontent.com/TalismanSociety/chaindata/v3/assets/chains/unknown.svg"

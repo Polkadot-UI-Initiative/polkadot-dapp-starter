@@ -6,7 +6,6 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { IconPolkadot, Icons } from "@/components/icons"
 
-import { ConnectButton } from "./connect-button"
 
 interface MainNavProps {
   items?: NavItem[]

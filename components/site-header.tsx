@@ -6,6 +6,7 @@ import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 
+import ChainSwitch from "./chain-switch"
 import { ConnectButton } from "./connect-button"
 
 export function SiteHeader() {

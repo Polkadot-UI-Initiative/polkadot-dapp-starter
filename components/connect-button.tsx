@@ -65,21 +65,28 @@ export const ConnectButton: FC<ConnectButtonProps> = ({ size }) => {
           open && ls.set("userWantsConnection", true)
         }}
       >
-        <DropdownMenuTrigger isLoading={isConnecting} disabled={isConnecting}>
-          <Button
+        <DropdownMenuTrigger
+          isLoading={isConnecting}
+          disabled={isConnecting}
+          className={cn(
+            buttonVariants(),
+            "bg-polkadot-primary text-white hover:bg-polkadot-primary-600"
+          )}
+        >
+          {/* <Button
             className="bg-polkadot-primary text-white hover:bg-polkadot-primary-600"
             // asChild
             // isLoading={isConnecting}
-          >
-            <>
-              <ConnectWallet
-                width={18}
-                height={18}
-                className="mr-2 inline-block bg-bottom stroke-current"
-              />
-              Connect
-            </>
-          </Button>
+          > */}
+          <>
+            <ConnectWallet
+              width={18}
+              height={18}
+              className="mr-2 inline-block bg-bottom stroke-current"
+            />
+            Connect
+          </>
+          {/* </Button> */}
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="end"

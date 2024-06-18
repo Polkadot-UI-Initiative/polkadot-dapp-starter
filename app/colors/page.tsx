@@ -52,13 +52,13 @@ export default function PageColors() {
           </Link>
           .
         </p>
-        <p className="font-bold">Example:</p>
-        <code className="text-xs bg-slate-200 dark:bg-slate-800 rounded-sm p-1 ">
-          {`<div className="bg-polkadot-primary-400">`}
+        <p className="font-bold">Examples:</p>
+        <code className="text-xs bg-polkadot-primary-400 text-white rounded-sm p-1 ">
+          {`<div className="bg-polkadot-primary-400 text-white">`}
         </code>
-        or
-        <code className="text-xs bg-slate-200 dark:bg-slate-800 rounded-sm p-1 mb-4">{`<p className="text-polkadot-secondary">`}</code>
-        <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(8rem,1fr))] gap-x-2 gap-y-8 sm:grid-cols-1">
+        <code className="text-xs rounded-sm p-1 text-polkadot-secondary">{`<p className="text-polkadot-secondary">`}</code>
+        <code className="text-xs rounded-sm p-1 border-2 border-polkadot-tertiary-700">{`<p className="border-2 border-polkadot-tertiary-700">`}</code>
+        <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(8rem,1fr))] gap-x-2 gap-y-8 sm:grid-cols-1 mt-4">
           <div className="2xl:contents">
             {colors.map((color) => (
               <div className="mb-8">

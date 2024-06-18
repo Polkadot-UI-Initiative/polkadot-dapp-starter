@@ -1,5 +1,3 @@
-import { title } from "process"
-
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
@@ -10,6 +8,10 @@ export const siteConfig = {
     {
       title: "Home",
       href: "/",
+    },
+    {
+      title: "Components",
+      href: "/components",
     },
     {
       title: "Colors",
